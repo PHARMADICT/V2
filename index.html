@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#f0faf8">
+  <title>PharmaScan Pro - Supplier Edition</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
+    @theme {
+      --color-teal-50:  oklch(0.977 0.021 178);
+      --color-teal-100: oklch(0.950 0.040 178);
+      --color-teal-200: oklch(0.900 0.072 178);
+      --color-teal-300: oklch(0.834 0.098 178);
+      --color-teal-400: oklch(0.760 0.115 178);
+      --color-teal-500: oklch(0.680 0.124 178);
+      --color-teal-600: oklch(0.580 0.112 178);
+      --color-teal-700: oklch(0.480 0.096 178);
+      --color-danger-50:  oklch(0.97 0.013 25);
+      --color-danger-100: oklch(0.93 0.032 25);
+      --color-danger-200: oklch(0.88 0.055 25);
+      --color-danger-500: oklch(0.62 0.21  25);
+      --color-danger-600: oklch(0.53 0.20  25);
+      --color-amber-50:  oklch(0.98 0.020 85);
+      --color-amber-100: oklch(0.95 0.052 85);
+      --color-amber-200: oklch(0.90 0.090 85);
+      --color-amber-500: oklch(0.76 0.147 85);
+      --color-amber-600: oklch(0.67 0.148 85);
+      --color-emerald-50:  oklch(0.97 0.021 155);
+      --color-emerald-100: oklch(0.93 0.048 155);
+      --color-emerald-200: oklch(0.87 0.082 155);
+      --color-emerald-500: oklch(0.70 0.148 155);
+      --color-emerald-600: oklch(0.60 0.140 155);
+      --color-emerald-700: oklch(0.50 0.122 155);
+      --color-slate-50:  oklch(0.984 0.003 247);
+      --color-slate-100: oklch(0.961 0.006 247);
+      --color-slate-200: oklch(0.927 0.009 247);
+      --color-slate-300: oklch(0.869 0.012 247);
+      --color-slate-400: oklch(0.703 0.020 247);
+      --color-slate-500: oklch(0.556 0.020 247);
+      --color-slate-600: oklch(0.446 0.017 247);
+      --color-slate-700: oklch(0.372 0.014 247);
+      --color-slate-800: oklch(0.279 0.010 247);
+      --color-slate-900: oklch(0.208 0.007 247);
+      --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+      --text-2xs:  0.625rem;
+      --text-xs:   0.75rem;
+      --text-sm:   0.8125rem;
+      --text-base: 0.9375rem;
+      --text-lg:   1.0625rem;
+      --text-xl:   1.1875rem;
+      --text-2xl:  1.375rem;
+      --text-3xl:  1.75rem;
+      --font-weight-normal:    400;
+      --font-weight-medium:    500;
+      --font-weight-semibold:  600;
+      --font-weight-bold:      700;
+      --font-weight-extrabold: 800;
+      --tracking-tightest: -0.04em;
+      --tracking-tighter:  -0.02em;
+      --tracking-tight:    -0.01em;
+      --tracking-normal:    0em;
+      --tracking-wide:      0.04em;
+      --tracking-wider:     0.08em;
+      --tracking-widest:    0.12em;
+      --leading-none:    1;
+      --leading-tight:   1.25;
+      --leading-snug:    1.375;
+      --leading-normal:  1.5;
+      --leading-relaxed: 1.625;
+      --breakpoint-xs: 375px;
+      --breakpoint-sm: 640px;
+      --breakpoint-md: 768px;
+      --radius-xs:   4px;
+      --radius-sm:   6px;
+      --radius-md:   10px;
+      --radius-lg:   14px;
+      --radius-xl:   18px;
+      --radius-2xl:  24px;
+      --radius-full: 9999px;
+      --shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.04);
+      --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+      --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+      --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+      --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+      --shadow-teal: 0 4px 14px -2px oklch(0.680 0.124 178 / 0.30);
+      --inset-shadow-xs: inset 0 1px 0 0 rgb(255 255 255 / 0.8);
+      --inset-shadow-sm: inset 0 2px 4px 0 rgb(0 0 0 / 0.04);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-tap-highlight-color: transparent; font-family: var(--font-sans); }
+    body { background: var(--color-slate-50); color: var(--color-slate-800); min-height: 100dvh; overflow: hidden; user-select: none; -webkit-user-select: none; overscroll-behavior: none; }
+    button { font-family: var(--font-sans); }
+    input, textarea { font-family: var(--font-sans); }
+    .page { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .page::-webkit-scrollbar { display: none; }
+    .chips-row { scrollbar-width: none; }
+    .chips-row::-webkit-scrollbar { display: none; }
+    @keyframes scanLine { 0%{top:8px;opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{top:calc(100% - 10px);opacity:0} }
+    .scan-line { animation: scanLine 2s ease-in-out infinite; }
+    @keyframes pinShake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(4px)} }
+    .pin-shake { animation: pinShake 0.4s ease; }
+    @keyframes toastIn  { from{opacity:0;transform:translateY(-10px) scale(0.92)} to{opacity:1;transform:translateY(0) scale(1)} }
+    @keyframes toastOut { to{opacity:0;transform:translateY(-6px) scale(0.95)} }
+    .toast-in  { animation: toastIn  0.28s cubic-bezier(0.32,0.72,0,1) forwards; }
+    .toast-out { animation: toastOut 0.22s ease forwards; }
+    .sheet { transform: translateY(100%); transition: transform 0.32s cubic-bezier(0.32,0.72,0,1); }
+    .sheet.open { transform: translateY(0); }
+    .overlay { opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+    .overlay.active { opacity: 1; pointer-events: all; }
+    .side-menu { transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.32,0.72,0,1); }
+    .side-menu.open { transform: translateX(0); }
+    .press:active { transform: scale(0.96); opacity: 0.85; }
+    .bar-fill { transition: width 0.7s cubic-bezier(0.4,0,0.2,1); }
+    .card-border-good    { border-left: 3px solid oklch(0.70 0.148 155); }
+    .card-border-warn    { border-left: 3px solid oklch(0.76 0.147 85); }
+    .card-border-expired { border-left: 3px solid oklch(0.62 0.21 25); }
+    .card-border-none    { border-left: 3px solid oklch(0.869 0.012 247); }
+    .pin-dot { transition: background 0.12s, border-color 0.12s, box-shadow 0.12s; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { animation: fadeUp 0.3s ease forwards; }
+  </style>
+</head>
+<body>
+
+<div class="flex flex-col" style="height:100dvh;overflow:hidden">
+
+  <!-- HEADER -->
+  <header class="flex-shrink-0 bg-white border-b border-slate-200 px-4 pt-3 pb-2.5 z-50" style="box-shadow:var(--shadow-xs)">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 bg-teal-500 rounded-xl flex items-center justify-center text-white text-lg flex-shrink-0" style="box-shadow:var(--shadow-teal)">💊</div>
+        <div>
+          <span class="font-extrabold text-sm text-slate-800 tracking-tight">PharmaScan Pro</span>
+          <span class="ml-1.5 font-mono text-2xs font-semibold text-teal-500 bg-teal-50 border border-teal-100 px-1.5 py-0.5 rounded">v7</span>
+        </div>
+      </div>
+      <button id="btnMenu" class="press w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><rect width="16" height="1.5" rx="0.75" fill="currentColor"/><rect y="5.25" width="11" height="1.5" rx="0.75" fill="currentColor"/><rect y="10.5" width="13" height="1.5" rx="0.75" fill="currentColor"/></svg>
+      </button>
+    </div>
+    <div class="flex items-center gap-2 mt-2.5">
+      <span class="font-mono text-2xs font-bold text-teal-600 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-md tracking-wider">30762</span>
+      <span class="text-slate-300">·</span>
+      <span class="text-slate-500 text-xs font-semibold tracking-widest uppercase">Boots T3</span>
+      <span class="ml-auto inline-flex items-center gap-1 text-2xs text-emerald-600 font-bold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>Online
+      </span>
+    </div>
+  </header>
+
+  <!-- PAGES -->
+  <div class="flex-1 relative overflow-hidden">
+
+    <!-- SCAN PAGE -->
+    <div class="page absolute inset-0 overflow-y-auto" id="pageScan" style="display:block;padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))">
+      <div class="p-4 space-y-3.5">
+
+        <!-- Scan card -->
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="box-shadow:var(--shadow-sm)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-3">Scan or Enter Barcode</p>
+          <div class="flex items-center gap-2.5 bg-slate-50 border border-slate-200 rounded-xl px-3 focus-within:border-teal-400 focus-within:ring-2 focus-within:ring-teal-100 transition-all" style="box-shadow:var(--inset-shadow-sm)">
+            <svg class="text-slate-300 flex-shrink-0" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M10 10l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <input id="barcodeInput" type="text" inputmode="numeric" autocomplete="off"
+              placeholder="GTIN / EAN / RMS code…"
+              class="flex-1 h-11 text-sm font-semibold text-slate-700 placeholder:text-slate-300 placeholder:font-normal bg-transparent outline-none" style="font-family:var(--font-mono)">
+          </div>
+          <div class="grid grid-cols-2 gap-2.5 mt-3">
+            <button id="btnCamera" class="press h-11 bg-teal-500 text-white rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 tracking-tight" style="box-shadow:var(--shadow-teal)">
+              📷 Camera Scan
+            </button>
+            <button id="btnPaste" class="press h-11 bg-slate-50 text-slate-600 rounded-xl text-sm font-semibold flex items-center justify-center gap-1.5 border border-slate-200">
+              📋 Bulk Paste
+            </button>
+          </div>
+        </div>
+
+        <!-- Supplier Filter Quick Access -->
+        <div class="bg-white rounded-xl border border-slate-100 p-3" style="box-shadow:var(--shadow-xs)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-2">Quick Filter by Supplier</p>
+          <div id="supplierQuickFilter" class="flex gap-1.5 overflow-x-auto pb-1">
+            <button class="supplier-chip flex-shrink-0 text-2xs font-semibold px-2.5 py-1 rounded-full bg-teal-500 text-white" data-supplier="">All</button>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-2.5">
+          <div class="bg-white rounded-xl border border-teal-100 p-3 text-center" style="box-shadow:var(--shadow-xs)">
+            <div id="statTotal" class="text-2xl font-extrabold text-teal-500 leading-none mb-1">0</div>
+            <div class="text-2xs font-bold tracking-widest uppercase text-slate-400">Items</div>
+          </div>
+          <div class="bg-amber-50 rounded-xl border border-amber-200 p-3 text-center" style="box-shadow:var(--shadow-xs)">
+            <div id="statExpiring" class="text-2xl font-extrabold text-amber-500 leading-none mb-1">0</div>
+            <div class="text-2xs font-bold tracking-widest uppercase text-amber-500">Expiring</div>
+          </div>
+          <div class="bg-danger-50 rounded-xl border border-danger-200 p-3 text-center" style="box-shadow:var(--shadow-xs)">
+            <div id="statExpired" class="text-2xl font-extrabold text-danger-500 leading-none mb-1">0</div>
+            <div class="text-2xs font-bold tracking-widest uppercase text-danger-500">Expired</div>
+          </div>
+        </div>
+
+        <!-- Recent -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-2xs font-bold tracking-widest uppercase text-slate-400">Recent Scans</p>
+            <button id="btnViewAll" class="text-xs font-semibold text-teal-600 press">View All →</button>
+          </div>
+          <div id="recentList" class="space-y-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTORY PAGE -->
+    <div class="page absolute inset-0 overflow-y-auto" id="pageHistory" style="display:none;padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))">
+      <div class="p-4 space-y-3">
+        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-3 focus-within:border-teal-400 focus-within:ring-2 focus-within:ring-teal-100 transition-all" style="box-shadow:var(--shadow-xs)">
+          <svg class="text-slate-300 flex-shrink-0" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M10 10l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <input id="searchInput" type="text" placeholder="Search product, barcode, batch, supplier…" class="flex-1 h-10 text-sm text-slate-700 placeholder:text-slate-300 bg-transparent outline-none">
+          <button id="btnSearchClear" class="text-slate-400 text-xs font-semibold" style="display:none">✕</button>
+        </div>
+        <div class="chips-row flex gap-1.5 overflow-x-auto pb-0.5" id="filterChips">
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-teal-500 text-white border border-teal-500" data-filter="all">All</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="expired">Expired</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="expiring">Expiring</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="good">Good</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="sold">SOLD</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="return">RETURN</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="damage">DAMAGE</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="removed">REMOVED</button>
+          <button class="chip flex-shrink-0 text-2xs font-bold tracking-wide px-3 py-1.5 rounded-full bg-white text-slate-500 border border-slate-200" data-filter="pending">Pending</button>
+        </div>
+        <!-- Supplier Filter Dropdown -->
+        <div>
+          <select id="supplierFilterSelect" class="w-full h-10 bg-white border border-slate-200 rounded-xl px-3 text-sm text-slate-700 outline-none focus:border-teal-400">
+            <option value="">All Suppliers</option>
+          </select>
+        </div>
+        <div id="historyList" class="space-y-2"></div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div class="page absolute inset-0 overflow-y-auto" id="pageDashboard" style="display:none;padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))">
+      <div class="p-4 space-y-4">
+        <div>
+          <h1 class="text-2xl font-extrabold text-slate-800 tracking-tighter leading-tight">Expiry <span class="text-teal-500">Report</span></h1>
+          <p class="text-xs text-slate-400 mt-0.5 font-medium">Boots T3 · Store 30762 · Dubai</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="col-span-2 bg-teal-500 rounded-2xl p-4 flex items-center justify-between" style="box-shadow:var(--shadow-teal)">
+            <div>
+              <div id="dashTotal" class="text-4xl font-extrabold text-white leading-none">0</div>
+              <div class="text-teal-100 text-xs font-bold tracking-widest uppercase mt-1">Total Items Tracked</div>
+            </div>
+            <div class="text-5xl opacity-30"></div>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-100 p-4" style="box-shadow:var(--shadow-xs)">
+            <div id="dashQty" class="text-3xl font-extrabold text-slate-700 leading-none mb-1">0</div>
+            <div class="text-2xs font-bold tracking-widest uppercase text-slate-400">Total Units</div>
+          </div>
+          <div class="bg-amber-50 rounded-xl border border-amber-100 p-4" style="box-shadow:var(--shadow-xs)">
+            <div id="dashExpiring" class="text-3xl font-extrabold text-amber-500 leading-none mb-1">0</div>
+            <div class="text-2xs font-bold tracking-widest uppercase text-amber-500">Expiring ≤90d</div>
+          </div>
+          <div class="col-span-2 bg-danger-50 rounded-xl border border-danger-100 p-4 flex items-center justify-between" style="box-shadow:var(--shadow-xs)">
+            <div>
+              <div id="dashExpired" class="text-3xl font-extrabold text-danger-500 leading-none mb-1">0</div>
+              <div class="text-2xs font-bold tracking-widest uppercase text-danger-600">Expired — Action Required</div>
+            </div>
+            <span class="text-3xl opacity-40">⚠️</span>
+          </div>
+        </div>
+        <!-- Supplier Breakdown -->
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="box-shadow:var(--shadow-sm)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-3">Inventory by Supplier</p>
+          <div id="supplierBreakdown" class="space-y-2"><p class="text-sm text-slate-400 text-center py-4">No data yet</p></div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="box-shadow:var(--shadow-sm)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-3">Expiry by Month</p>
+          <div id="monthBreakdown" class="space-y-2.5"><p class="text-sm text-slate-400 text-center py-4">No data yet</p></div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="box-shadow:var(--shadow-sm)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-3">Status Breakdown</p>
+          <div class="divide-y divide-slate-100">
+            <div class="flex items-center justify-between py-2.5">
+              <div class="flex items-center gap-2 text-sm text-slate-600 font-medium"><span class="w-2 h-2 rounded-full bg-slate-300"></span>Pending</div>
+              <span id="dashPending" class="font-mono font-bold text-sm text-slate-700">0</span>
+            </div>
+            <div class="flex items-center justify-between py-2.5">
+              <div class="flex items-center gap-2 text-sm text-slate-600 font-medium"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Sold</div>
+              <span id="dashSold" class="font-mono font-bold text-sm text-emerald-600">0</span>
+            </div>
+            <div class="flex items-center justify-between py-2.5">
+              <div class="flex items-center gap-2 text-sm text-slate-600 font-medium"><span class="w-2 h-2 rounded-full bg-amber-500"></span>Return</div>
+              <span id="dashReturn" class="font-mono font-bold text-sm text-amber-600">0</span>
+            </div>
+            <div class="flex items-center justify-between py-2.5">
+              <div class="flex items-center gap-2 text-sm text-slate-600 font-medium"><span class="w-2 h-2 rounded-full bg-danger-500"></span>Damage</div>
+              <span id="dashDamage" class="font-mono font-bold text-sm text-danger-500">0</span>
+            </div>
+            <div class="flex items-center justify-between py-2.5">
+              <div class="flex items-center gap-2 text-sm text-slate-600 font-medium"><span class="w-2 h-2 rounded-full bg-danger-500"></span>Removed</div>
+              <span id="dashRemoved" class="font-mono font-bold text-sm text-danger-500">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-4" style="box-shadow:var(--shadow-sm)">
+          <p class="text-2xs font-bold tracking-widest uppercase text-slate-400 mb-1">Export</p>
+          <p class="text-xs text-slate-400 mb-3">BARCODE · RMS · DESCRIPTION · EXPIRY · BATCH · SUPPLIER</p>
+          <div class="space-y-2">
+            <button id="btnExportTSV" class="press w-full h-11 bg-teal-500 text-white rounded-xl text-sm font-bold flex items-center justify-center gap-2" style="box-shadow:var(--shadow-teal)">📤 Export TSV (Excel-ready)</button>
+            <div class="grid grid-cols-2 gap-2">
+              <button id="btnExportCSV" class="press h-10 bg-slate-50 text-slate-600 rounded-xl text-xs font-semibold border border-slate-200 flex items-center justify-center gap-1.5">📄 Export CSV</button>
+              <button id="btnExportJSON" class="press h-10 bg-slate-50 text-slate-600 rounded-xl text-xs font-semibold border border-slate-200 flex items-center justify-center gap-1.5">💾 Backup JSON</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="flex-shrink-0 bg-white border-t border-slate-200 flex items-start" style="padding-top:6px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -1px 12px -4px rgb(0 0 0 / 0.06)">
+    <button class="nav-tab flex-1 flex flex-col items-center gap-1" data-page="pageScan">
+      <span class="nav-icon text-xl leading-none transition-all duration-200">📷</span>
+      <span class="nav-label text-2xs font-bold tracking-widest uppercase transition-colors duration-200 text-teal-500">Scan</span>
+    </button>
+    <button class="nav-tab flex-1 flex flex-col items-center gap-1" data-page="pageHistory">
+      <span class="nav-icon text-xl leading-none transition-all duration-200" style="filter:grayscale(1) opacity(0.4)">📋</span>
+      <span class="nav-label text-2xs font-bold tracking-widest uppercase transition-colors duration-200 text-slate-400">History</span>
+    </button>
+    <button class="nav-tab flex-1 flex flex-col items-center gap-1" data-page="pageDashboard">
+      <span class="nav-icon text-xl leading-none transition-all duration-200" style="filter:grayscale(1) opacity(0.4)">📊</span>
+      <span class="nav-label text-2xs font-bold tracking-widest uppercase transition-colors duration-200 text-slate-400">Dashboard</span>
+    </button>
+  </nav>
+</div>
+
+<!-- CAMERA -->
+<div id="cameraView" class="fixed inset-0 bg-black z-50 flex-col" style="display:none">
+  <video id="cameraVideo" class="w-full object-cover" style="height:100dvh" playsinline muted></video>
+  <div class="absolute inset-0 flex flex-col items-center justify-center">
+    <div class="relative" style="width:240px;height:160px;border-radius:14px;border:2px solid oklch(0.760 0.115 178);box-shadow:0 0 0 9999px rgba(0,0,0,0.55)">
+      <span class="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-teal-300 rounded-tl-xl"></span>
+      <span class="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-teal-300 rounded-tr-xl"></span>
+      <span class="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-teal-300 rounded-bl-xl"></span>
+      <span class="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-teal-300 rounded-br-xl"></span>
+      <div class="scan-line absolute left-2 right-2 rounded-full" style="height:2px;background:linear-gradient(90deg,transparent,oklch(0.760 0.115 178),transparent)"></div>
+    </div>
+    <p class="text-white/70 text-sm mt-5 font-medium">Position barcode within frame</p>
+  </div>
+  <div id="cameraDetected" class="absolute bottom-20 left-1/2 -translate-x-1/2 bg-teal-400 text-white text-sm font-bold px-5 py-2.5 rounded-full whitespace-nowrap" style="display:none;box-shadow:var(--shadow-teal)"></div>
+  <button id="btnCameraClose" class="absolute right-4 w-10 h-10 bg-black/50 backdrop-blur rounded-full text-white text-lg flex items-center justify-center" style="top:calc(16px + env(safe-area-inset-top,0px))">✕</button>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay fixed inset-0 z-30" style="background:rgba(15,23,42,0.35);backdrop-filter:blur(3px)"></div>
+
+<!-- SCAN SHEET -->
+<div id="scanSheet" class="sheet
