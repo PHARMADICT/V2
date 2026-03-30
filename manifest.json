@@ -1,7 +1,7 @@
 {
-  "name": "PharmaScan Pro — Boots Oasis",
+  "name": "PharmaScan Pro — Boots T3",
   "short_name": "PharmaScan",
-  "description": "Boots Oasis Pharmacy Expiry Tracker with GS1 Barcode Support",
+  "description": "Boots T3 Pharmacy Expiry Tracker with GS1 Barcode Support",
   "version": "6.0.0",
   "start_url": "./index.html",
   "scope": "./",
